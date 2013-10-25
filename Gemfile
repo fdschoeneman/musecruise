@@ -114,7 +114,8 @@ group :test, :development do
   gem 'guard'
   gem 'guard-bundler'
   gem 'guard-livereload'
-  gem 'guard-minitest'
+  # gem 'guard-minitest'
+  gem 'guard-minitest', github: 'guard/guard-minitest'
 
   # clean up database between tests
   gem 'database_cleaner'

@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Start date:
+  = @tour.start_date
+%p
+  %b End date:
+  = @tour.end_date
+%p
+  %b Questions:
+  = @tour.questions
+
+= link_to 'Edit', edit_tour_path(@tour)
+\|
+= link_to 'Back', tours_path

@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/guard/guard-minitest.git
+  revision: b2194e9e0ac7111cb983b14962ce721b55cf4c70
+  specs:
+    guard-minitest (2.0.0)
+      guard (~> 2.0)
+      minitest (>= 3.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -118,9 +126,6 @@ GEM
       em-websocket (~> 0.5)
       guard (~> 2.0)
       multi_json (~> 1.8)
-    guard-minitest (2.0.0)
-      guard (~> 2.0)
-      minitest (>= 3.0)
     haml (4.0.3)
       tilt
     haml-rails (0.4)
@@ -321,7 +326,7 @@ DEPENDENCIES
   guard
   guard-bundler
   guard-livereload
-  guard-minitest
+  guard-minitest!
   haml
   haml-rails
   headless (= 0.3.1)

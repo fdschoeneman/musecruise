@@ -1,4 +1,10 @@
 Musecruise::Application.routes.draw do
+  get "pages/home"
+  resources :tours
+
+  devise_for :users
+
+  root 'pages#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
