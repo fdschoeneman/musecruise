@@ -1,0 +1,10 @@
+.navbar.navbar-fixed-top
+  .navbar-inner
+    .container
+      .brand= title
+      %a.visible-phone.btn.btn-simple.pull-right{ href: "#footer-nav"}
+        %i.icon-th-list
+        %b Menu
+      %ul.nav.pull-right.hidden-phone
+        = render 'nav_links'
+            
