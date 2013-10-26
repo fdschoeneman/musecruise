@@ -36,27 +36,13 @@ require 'test_helper'
     end
   end
 
-describe "associations" do
+  describe "associations" do
 
     it { must have_many(:tour_requests) }
-    # it { must have_many(:addresses_addressable) }
-    # it { must have_many(:addresses).through(:addresses_addressable) }
-    # it { must have_many(:certifications_holdable) }
-    # it { must have_many(:certifications).through(:certifications_holdable) }
-    # it { must have_many(:images) }
-    # it { must have_many(:positions) }
-    # it { must have_many(:showcases) }
-    # it { must accept_nested_attributes_for(:images) }
   end
   
   describe "validations" do 
 
-    # Given(:existing_user) { create(:user) }
-    # Given(:hacker) {  User.new(attributes_for(:user, email: existing_user.email)) }
-    
-    describe "must be the only user with a given email" do
-
-      # Then { hacker.wont_be valid }
-    end
+    it { must validate_presence_of(:email)}
   end
 end

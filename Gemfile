@@ -36,18 +36,18 @@ gem 'haml-rails'
 gem 'sendgrid', '>= 1.0.1'
 
 # authentication
-gem 'devise', '3.0.0'
+gem 'devise'
 
 # permissions
 gem 'cancan'
 
 # user roles
-gem 'rolify', '3.3.0.rc4'
+gem 'rolify'
 
 # forms
 gem 'simple_form'
 
-gem "client_side_validations"
+# gem "client_side_validations"
 
 # environment variables
 gem 'figaro'
@@ -86,6 +86,9 @@ group :test do
 
   # capybara save_and_open dependency
   gem 'launchy'
+
+  # test emails with capybara
+  gem 'capybara-email'
 
 end
 

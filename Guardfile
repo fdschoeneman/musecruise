@@ -8,6 +8,7 @@ group :tests do
 
     watch(%r{^test/factories/(.+)\.rb})                    { 'test/factories_test.rb' }
     watch(%r{^test/(.*)\/?test_(.*)\.rb})
+    watch(%r{^test/(.*)\/?test_(.*)\.rb})
     watch(%r{^test/support/(.+)\.rb})      { 'test' }
     watch(%r{^test/test_helper\.rb})      { 'test' }
     watch(%r{^test/.+_test\.rb})

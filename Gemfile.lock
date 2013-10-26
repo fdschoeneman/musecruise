@@ -57,9 +57,11 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    capybara-email (2.2.0)
+      capybara (~> 2.1.0)
+      mail
     celluloid (0.15.2)
       timers (~> 1.1.0)
-    client_side_validations (3.2.6)
     code_analyzer (0.4.3)
       sexp_processor
     coderay (1.0.9)
@@ -311,11 +313,11 @@ DEPENDENCIES
   binding_of_caller
   bootstrap-sass
   cancan
-  client_side_validations
+  capybara-email
   coffee-rails
   database_cleaner
   debugger
-  devise (= 3.0.0)
+  devise
   factory_girl_rails
   faker
   faker-bloocher
@@ -349,7 +351,7 @@ DEPENDENCIES
   rails_best_practices
   rb-fsevent
   rb-inotify
-  rolify (= 3.3.0.rc4)
+  rolify
   ruby_parser (= 3.1.1)
   sass-rails
   sendgrid (>= 1.0.1)
