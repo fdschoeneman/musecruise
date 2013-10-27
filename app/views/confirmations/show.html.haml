@@ -3,7 +3,9 @@
   = devise_error_messages!
   = f.input :password, input_html: { autofocus: true}
   = f.input :password_confirmation
-  = f.input :phone, label: "so our telemarketers can reach you at dinner"
+  = f.input :first_name
+  = f.input :last_name
+  = f.input :phone
   = f.input :last_sign_in_ip, as: :hidden
   = f.input :confirmation_token, as: :hidden
   = f.button :submit, "Confirm that you are a player"

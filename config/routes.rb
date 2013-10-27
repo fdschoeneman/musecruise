@@ -6,7 +6,8 @@ Musecruise::Application.routes.draw do
   }
 
   devise_scope :user do
-    put '/confirm' => 'confirmations#confirm'
+    patch '/confirm' => 'confirmations#confirm'
+    root to: "tours#new"
   end
   
   resources :users
@@ -15,6 +16,10 @@ Musecruise::Application.routes.draw do
 
   get   'pages/index', to: 'pages#index'
   
-  root  'pages#home'
+  # root  'pages#home'
+
+  # unauthenticated do
+  #   root to: "registrations#new", :as => "unauthenticated"
+  # end
   
 end

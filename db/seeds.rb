@@ -11,9 +11,14 @@ YAML.load(ENV['ROLES']).each do |role|
   Role.find_or_create_by(name: role)
 end
 puts 'DEFAULT USERS'
-user = User.find_or_create_by_email :first_name => ENV['ADMIN_NAME'].dup, :email => ENV['ADMIN_EMAIL'].dup, :password => ENV['ADMIN_PASSWORD'].dup, :password_confirmation => ENV['ADMIN_PASSWORD'].dup
-puts 'user: ' << user.first_name
-user.add_role :admin
-user2 = User.find_or_create_by_email :first_name => 'Second User', :email => 'user2@example.com', :password => 'changeme', :password_confirmation => 'changeme'
-puts 'user: ' << user2.first_name
-user2.add_role :VIP
+
+admin = User.find_or_create_by_email(
+  email: "fred.schoeneman@gmail.com",
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  phone: Faker::PhoneNumber.phone_number,
+  password: ENV['ADMIN_PASSWORD']
+  )
+admin.add_role :admin
+admin.confirm!
+

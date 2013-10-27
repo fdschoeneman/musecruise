@@ -29,7 +29,8 @@ require 'test_helper'
       it { must have_db_column(:sign_in_count).of_type(:integer) }
       it { must have_db_column(:updated_at).of_type(:datetime) }
     end
-  describe "indexes" do
+    
+    describe "indexes" do
 
       it { must have_db_index(:email) }
       it { must have_db_index(:confirmation_token) }
@@ -43,6 +44,22 @@ require 'test_helper'
   
   describe "validations" do 
 
-    it { must validate_presence_of(:email)}
+    it { validate_presence_of(:email)}
+
+    Given(:user) { create(:user) }
+
+    Then { user.update_attributes(first_name: "").must_equal false }
+    Then { user.update_attributes(last_name: "").must_equal false }
+    Then { user.update_attributes(phone: "").must_equal false }
+  end
+
+  describe "methods" do 
+
+    Given(:user) { create(:user, first_name: "Bill", last_name: "Travis") }
+
+    describe "fullname" do 
+
+      Then { user.full_name.must_equal "Bill Travis"}
+    end
   end
 end
