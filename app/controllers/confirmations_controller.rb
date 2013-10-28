@@ -1,5 +1,6 @@
 class ConfirmationsController < Devise::ConfirmationsController
   def show
+    @amenities = Amenity.all
     self.resource = resource_class.find_by_confirmation_token(params[:confirmation_token]) if params[:confirmation_token].present?
     super if resource.nil? or resource.confirmed?
   end
@@ -17,7 +18,7 @@ class ConfirmationsController < Devise::ConfirmationsController
 
   def after_confirmation_path_for(resource_name, resource)
     if signed_in?
-      signed_in_root_path(resource)
+      new_user_tour_path
     else
       new_session_path(resource_name)
     end

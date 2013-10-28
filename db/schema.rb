@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131025222508) do
+ActiveRecord::Schema.define(version: 20131028035655) do
+
+  create_table "amenities", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "roles", force: true do |t|
     t.string   "name"
@@ -29,6 +35,13 @@ ActiveRecord::Schema.define(version: 20131025222508) do
     t.date     "end_date"
     t.string   "questions"
     t.integer  "tourist_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tours_amenities", force: true do |t|
+    t.integer  "tour_id"
+    t.integer  "amenity_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -66,5 +79,13 @@ ActiveRecord::Schema.define(version: 20131025222508) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id", using: :btree
+
+  create_table "users_tours", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "tour_id"
+    t.integer  "rating"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

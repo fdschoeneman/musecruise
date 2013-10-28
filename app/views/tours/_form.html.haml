@@ -1,19 +1,16 @@
-= form_for @tour do |f|
-  - if @tour.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@tour.errors.count, "error")} prohibited this tour from being saved:"
-      %ul
-        - @tour.errors.full_messages.each do |msg|
-          %li= msg
+.form-vertical
+  = simple_form_for @tour, class: 'form-vertical' do |f|
+    .form-inputs
+      = f.error_notification
+      = display_base_errors resource
+      = f.label :start_date
+      = f.text_field :start_date
+      = f.label :end_date
+      = f.text_field :end_date
+      = f.label :questions
+      = f.text_area :questions
+      = f.input :amenities, collection: @amenities
 
-  .field
-    = f.label :start_date
-    = f.date_select :start_date
-  .field
-    = f.label :end_date
-    = f.date_select :end_date
-  .field
-    = f.label :questions
-    = f.text_field :questions
-  .actions
-    = f.submit 'Save'
+    .form-actions
+      = f.button :submit, class: 'btn-primary btn-large'
+      

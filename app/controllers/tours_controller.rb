@@ -1,6 +1,6 @@
 class ToursController < ApplicationController
 
-  before_filter :authenticate_user!
+  # before_filter :authenticate_user!
   before_action :set_tour, only: [:show, :edit, :update, :destroy]
 
   # GET /tours
@@ -15,6 +15,7 @@ class ToursController < ApplicationController
   # GET /tours/new
   def new
     @tour = Tour.new
+    @amenities = Amenity.all
   end
 
   # GET /tours/1/edit

@@ -10,7 +10,7 @@ feature "Request a tour Feature Test" do
 
 
   Then {
-    page.must have_selector("#flash_notice", text: /link has been sent/) }
+    page.must have_selector("#flash_notice", text: /Check your email/) }
   And { 
     User.where(email: "test@test.com").wont_be_nil }
   And { 
@@ -30,9 +30,13 @@ feature "Request a tour Feature Test" do
       click_button 'Confirm that you are a player'
     }
     
-    Then { 
-      confirm 
-      save_and_open_page }
+    Then { confirm
+      fill_in 'tour_start_date', with: '2014/01/01'
+      fill_in 'tour_start_date', with: '2014/02/03'
+      fill_in 'tour_questions', with: Faker::Bloocher.review
+      save_and_open_page
+    }
+
   end
 
   # context "" do 

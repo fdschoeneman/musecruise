@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
 
   # associations
   has_many :tour_requests, as: :tourist, class_name: "Tour"
+  has_many :users_tours
 
   # validations
   validates_presence_of :email

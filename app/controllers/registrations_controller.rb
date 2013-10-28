@@ -6,7 +6,7 @@ class RegistrationsController < Devise::RegistrationsController
 
 protected
   def after_sign_up_path_for(resource)
-    :new_tour_path
+    :new_user_tour_path
   end
 
    def after_inactive_sign_up_path_for(resource)

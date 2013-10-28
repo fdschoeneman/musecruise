@@ -10,14 +10,6 @@ FactoryGirl.define do
     factory :admin do 
       after(:create) { |user| user.add_role(:admin) } 
     end
-
-    factory :user_with_showcase do 
-      after(:create) { |user| user.showcases.create(showcase)}
-    end
-  end
-
-  factory :unconfirmed_user, parent: :user do 
-    confirmed_at nil
   end
 end
 
