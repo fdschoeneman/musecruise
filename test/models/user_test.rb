@@ -40,7 +40,6 @@ require 'test_helper'
   describe "associations" do
 
     it { must have_many(:tour_requests) }
-    it { must have_many(:users_tours) }
   end
   
   describe "validations" do 

@@ -24,7 +24,15 @@ class ToursController < ApplicationController
 
   # POST /tours
   def create
-    @tour = Tour.new(tour_params)
+
+    amenity = Amenity.find_by(id: tour_params[:amenities])
+    @tour = Tour.new(
+      start_date: tour_params[:start_date],
+      end_date: tour_params[:end_date],
+      questions: tour_params[:questions],
+      amenity: amenity.name
+      )
+    
 
     if @tour.save
       redirect_to @tour, notice: 'Tour was successfully created.'
@@ -56,6 +64,6 @@ class ToursController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def tour_params
-      params.require(:tour).permit(:start_date, :end_date, :questions)
+      params.require(:tour).permit(:start_date, :end_date, :questions, :amenities)
     end
 end
