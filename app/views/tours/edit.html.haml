@@ -1,7 +1,11 @@
-%h1 Editing tour
+%h2 rate your tour
+= simple_form_for(@tour, url: rate_my_tour_path, class: 'form-vertical') do |f|
+  .form-inputs
+    = f.error_notification
+    = display_base_errors resource
+    = f.hidden_field :tour_id, value: @tour.id
+    = f.input :rating, collection: 1..5
 
-= render 'form'
+  .form-actions
+    = f.button :submit, "rate this tour", class: 'btn-primary btn-large'
 
-= link_to 'Show', @tour
-\|
-= link_to 'Back', tours_path

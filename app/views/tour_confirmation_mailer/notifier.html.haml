@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %p
+      Hi #{@tour.tourist.first_name},
+    %p
+      Thanks for requesting a tour.  We won't sleep until we have a tour that begins on #{@tour.start_date}, ends on #{@tour.end_date}, includes a "#{@tour.amenity}", and has answered the question:
+
+    %p
+      = @tour.questions
+
+    %p 
+      When you have finished your tour, please consider #{link_to 'rating', edit_tour_url(@tour)} it.

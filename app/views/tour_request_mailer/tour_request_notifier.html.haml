@@ -1,0 +1,13 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %p
+      Hi,
+    %p
+      #{@tour.tourist.full_name.capitalize} has requested a tour that begins #{@tour.start_date}, ends on #{@tour.end_date}, a includes a "#{@tour.amenity}", and has asked the following questions:
+
+    %p
+      = @tour.questions
+    

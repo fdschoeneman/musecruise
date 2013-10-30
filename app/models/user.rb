@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # associations
-  has_many :tour_requests, as: :tourist, class_name: "Tour"
+  has_many :tours, as: :tourist, foreign_key: :tourist_id
   has_many :users_tours
 
   # validations

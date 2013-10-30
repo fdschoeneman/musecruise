@@ -15,7 +15,8 @@ Musecruise::Application.routes.draw do
 
   resources :tours
 
-  get   'pages/index', to: 'pages#index'
+  patch   'rate_my_tour',         to: 'tours#rate'
+  get   'pages/index',  to: 'pages#index'
   
   root  'pages#home'
   

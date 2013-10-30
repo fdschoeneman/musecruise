@@ -39,7 +39,7 @@ require 'test_helper'
 
   describe "associations" do
 
-    it { must have_many(:tour_requests) }
+    it { must have_many(:tours) }
   end
   
   describe "validations" do 
@@ -60,6 +60,11 @@ require 'test_helper'
     describe "fullname" do 
 
       Then { user.full_name.must_equal "Bill Travis"}
+    end
+
+    it "must respond to tours" do 
+
+      assert_respond_to(subject, :tours)
     end
   end
 end

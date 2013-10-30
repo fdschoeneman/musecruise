@@ -1,4 +1,7 @@
 class ConfirmationsController < Devise::ConfirmationsController
+
+  before_action :redirect_confirmed_to_rating, only: [:show]
+
   def show
 
     @amenities = Amenity.all
@@ -22,6 +25,13 @@ class ConfirmationsController < Devise::ConfirmationsController
       new_user_tour_path
     else
       new_session_path(resource_name)
+    end
+  end
+
+  def redirect_confirmed_to_rating
+
+    if User.find_by(confirmation_token: params[:confirmation_token]).nil?
+      redirect_to root_path
     end
   end
 
