@@ -2,22 +2,8 @@
 
 * Requires Ruby 2.0.0
 
-* Requires qt
-
-* environment varialbles in config/application.yml.example to your own
-
-* Database is Postgres
-
-
-
-* How to run the test suite
-
-> guard
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+1) download the repo
+2) > bundle install
+3) change values in config/application.yml.example to your own, and then save that file as config/application.yml
+4) > spring rake db:create db:migrate db:seed
+4) > guard
