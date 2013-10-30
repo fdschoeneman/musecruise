@@ -3,7 +3,7 @@
 * Requires Ruby 2.0.0
 
 1. download the repo
-2. > bundle install
+2. bundle install
 3. change values in config/application.yml.example to your own, and then save that file as config/application.yml
-4. > spring rake db:create db:migrate db:seed
-5. > guard
+4. spring rake db:create db:migrate db:seed
+5. guard
