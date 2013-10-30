@@ -1,6 +1,6 @@
 puts 'creating roles'
 
-YAML.load(ENV['ROLES']).each do |role|
+YAML.load(ENV['ROLES'].dup).each do |role|
   Role.find_or_create_by(name: role)
 end
 
@@ -11,7 +11,7 @@ admin = User.find_or_create_by_email(
   first_name: ENV['ADMIN_FIRST_NAME'].dup,
   last_name: ENV['ADMIN_LAST_NAME'].dup,
   phone: Faker::PhoneNumber.phone_number,
-  password: ENV['ADMIN_PASSWORD']
+  password: ENV['ADMIN_PASSWORD'].dup
 )
 admin.add_role :admin
 admin.confirm!
